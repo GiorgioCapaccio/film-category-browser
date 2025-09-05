@@ -2,7 +2,7 @@ import { useNavigate } from "react-router-dom";
 import { useWishlistStore } from "../../store/wishlistStore";
 import FilmCard from "../../components/FilmCard/FilmCard";
 import type { Film } from "../../types";
-import './WishlistPage.scss'
+import "./WishlistPage.scss";
 
 const WishlistPage: React.FC = () => {
   const navigate = useNavigate();
@@ -33,8 +33,12 @@ const WishlistPage: React.FC = () => {
         <div className="empty-wishlist">
           <div>
             <h2>Your wishlist is empty</h2>
-            <p>Add films to your collection</p>
-            <button onClick={goHome}>Browse Film</button>
+            <div className="browse-film-btn__container">
+              <p>Add films to your collection</p>
+            </div>
+            <div className="browse-film-btn__container">
+              <button onClick={goHome}>Browse Film</button>
+            </div>
           </div>
         </div>
       </div>
@@ -47,17 +51,19 @@ const WishlistPage: React.FC = () => {
         <div>
           <h1>My Wishlist</h1>
           <p>{items.length} film added to your collection</p>
-          <button className="clear-btn" onClick={handleClearWishlist}>Clear all</button>
+          <button className="clear-btn" onClick={handleClearWishlist}>
+            Clear all
+          </button>
         </div>
       </div>
       <div className="wishlist-grid">
-          {items.map((film: Film) => (
-            <FilmCard
-              key={film.id}
-              film={film}
-              onClick={() => handleFilmClick(film.id)}
-            />
-          ))}
+        {items.map((film: Film) => (
+          <FilmCard
+            key={film.id}
+            film={film}
+            onClick={() => handleFilmClick(film.id)}
+          />
+        ))}
       </div>
     </div>
   );

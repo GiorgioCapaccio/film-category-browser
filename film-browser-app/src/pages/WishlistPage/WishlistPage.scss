@@ -49,6 +49,11 @@
   }
 }
 
+.browse-film-btn__container {
+  @include flex-center;
+  margin-top: 0.5rem;
+}
+
 .wishlist-grid {
   display: grid;
   // the grid-template-columns is magic
