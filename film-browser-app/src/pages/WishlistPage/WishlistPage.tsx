@@ -51,7 +51,6 @@ const WishlistPage: React.FC = () => {
         </div>
       </div>
       <div className="wishlist-grid">
-        <div>
           {items.map((film: Film) => (
             <FilmCard
               key={film.id}
@@ -59,7 +58,6 @@ const WishlistPage: React.FC = () => {
               onClick={() => handleFilmClick(film.id)}
             />
           ))}
-        </div>
       </div>
     </div>
   );

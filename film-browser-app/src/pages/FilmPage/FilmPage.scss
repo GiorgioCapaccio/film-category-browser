@@ -1,5 +1,5 @@
-@import '../../styles/globals/variables';
-@import '../../styles/globals/mixins';
+@import "../../styles/globals/variables";
+@import "../../styles/globals/mixins";
 
 .film-page {
   min-height: calc(100vh - #{$header-height});
@@ -7,7 +7,6 @@
   max-width: $desktop;
   margin: 0 auto;
   background: $dark;
-
 }
 
 .film-page__header {
@@ -16,23 +15,24 @@
   margin-bottom: 2rem;
   padding-bottom: 1rem;
   border-bottom: 2px solid $gray;
-
 }
 
 .back-btn {
-  background: $gray;
+  background: transparent;
   color: $light;
-  padding: 0.5rem 1rem;
-  border-radius: 4px;
+  border: 2px solid $light;
+  padding: 0.75rem 1.5rem;
+  border-radius: $border-radius;
   cursor: pointer;
-  font-weight: bold;
-  font-size: 0.9rem;
+  transition: all $transition-normal;
+  font-weight: 600;
+  white-space: nowrap;
 
   &:hover {
-    background: $light;
-    color: $dark;
+    background: $gray;
+    color: $light;
+    transform: translateY(-2px);
   }
-
 }
 
 .film-title {
@@ -56,7 +56,6 @@
     font-family: $font-drama;
     font-style: italic;
   }
-
 }
 
 .film-page__content {
@@ -64,7 +63,6 @@
   grid-template-columns: 1fr 1fr;
   gap: 2rem;
   align-items: start;
-
 }
 
 .film-left {
@@ -75,7 +73,7 @@
 
 .film-poster {
   position: relative;
-  
+
   img {
     width: 100%;
     max-width: 300px;
@@ -89,7 +87,6 @@
   border-radius: 4px;
   width: $desktop;
   margin-top: 1rem;
-  
 
   h3 {
     color: $light;
@@ -137,12 +134,11 @@
   justify-content: space-between;
   align-items: center;
   font-size: 1rem;
-  
+
   strong {
     color: $light;
     font-weight: bold;
   }
-
 }
 
 .category-badge {
@@ -187,8 +183,7 @@
     border-color: $action-primary;
 
     &:hover {
-      background: $light;
-      color: $action-primary;
+      opacity: 0.8;
     }
   }
 
@@ -198,8 +193,7 @@
     border-color: $comedy-primary;
 
     &:hover {
-      background: $light;
-      color: $comedy-primary;
+      opacity: 0.8;
     }
   }
 
@@ -209,13 +203,11 @@
     border-color: $drama-primary;
 
     &:hover {
-      background: $light;
-      color: $drama-primary;
+      opacity: 0.8;
     }
   }
 
   &.active {
     opacity: 0.7;
   }
-
 }
