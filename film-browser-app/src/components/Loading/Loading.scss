@@ -1,0 +1,48 @@
+@import '../../styles/globals/variables';
+@import '../../styles/globals/mixins';
+
+.loading {
+  @include flex-center;
+  flex-direction: column;
+  gap: 1rem;
+  min-height: 200px;
+  padding: 2rem;
+
+  &-spinner {
+    @include loading-spinner(40px, $primary);
+  }
+
+  p {
+    color: $gray;
+    font-size: 1rem;
+    margin: 0;
+    text-align: center;
+  }
+
+  // Size variants
+  &--small {
+    min-height: 100px;
+    padding: 1rem;
+
+    .loading-spinner {
+      @include loading-spinner(24px, $primary);
+    }
+
+    p {
+      font-size: 0.9rem;
+    }
+  }
+
+  &--large {
+    min-height: 300px;
+    padding: 3rem;
+
+    .loading-spinner {
+      @include loading-spinner(60px, $primary);
+    }
+
+    p {
+      font-size: 1.2rem;
+    }
+  }
+}

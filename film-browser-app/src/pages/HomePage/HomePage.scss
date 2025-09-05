@@ -1,0 +1,10 @@
+@import '../../styles/globals/variables';
+@import '../../styles/globals/mixins';
+
+.home-page {
+  padding: 2rem;
+  max-width: $desktop;
+  margin: 0 auto;
+  min-height: calc(100vh - #{$header-height});
+
+}

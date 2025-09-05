@@ -1,0 +1,70 @@
+@import '../../styles/globals/variables';
+@import '../../styles/globals/mixins';
+
+.header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: linear-gradient(90deg, $dark, $darker);
+  z-index: $z-header;
+  box-shadow: $shadow-medium;
+
+  &-container {
+    max-width: $desktop;
+    margin: 0 auto;
+    padding: 1rem 2rem;
+    @include flex-between;
+    align-items: center;
+  }
+}
+
+.logo {
+  text-decoration: none;
+  
+  h1 {
+    color: $primary;
+    font-size: 2rem;
+    font-weight: bold;
+    margin: 0;
+    transition: color $transition-normal;
+  }
+
+  &:hover h1 {
+    color: lighten($primary, 10%);
+  }
+
+}
+
+.nav {
+  @include flex-start;
+  gap: 2rem;
+
+  a {
+    color: $light;
+    text-decoration: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: $border-radius;
+    transition: all $transition-normal;
+    font-weight: 500;
+    font-size: 1rem;
+    white-space: nowrap;
+    position: relative;
+
+    &:hover {
+      background: rgba($primary, 0.1);
+      color: $primary;
+      transform: translateY(-1px);
+    }
+
+    &.active {
+      background: $primary;
+      color: $light;
+      box-shadow: 0 2px 8px rgba($primary, 0.3);
+    }
+
+  }
+}
+
+.header:hover .logo h1 {
+  text-shadow: 0 0 10px rgba($primary, 0.3);
+}

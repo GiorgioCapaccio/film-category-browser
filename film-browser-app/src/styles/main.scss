@@ -1,0 +1,23 @@
+// Global styles - Order matters!
+@import './globals/variables';
+@import './globals/mixins';  
+@import './globals/base';
+@import './globals/utilities';
+
+@media print {
+  .header,
+  .wishlist-btn,
+  .carousel-nav {
+    display: none !important;
+  }
+  
+  body {
+    background: white !important;
+    color: black !important;
+  }
+  
+  .film-card {
+    break-inside: avoid;
+    margin-bottom: 1rem;
+  }
+}

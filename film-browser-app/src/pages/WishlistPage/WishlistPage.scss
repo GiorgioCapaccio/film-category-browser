@@ -1,0 +1,77 @@
+@import "../../styles/globals/variables";
+@import "../../styles/globals/mixins";
+
+.wishlist-page {
+  padding: 2rem;
+  max-width: $desktop;
+  margin: 0 auto;
+  min-height: calc(100vh - #{$header-height});
+}
+
+.wishlist-header {
+  @include flex-between;
+  align-items: flex-start;
+  margin-bottom: 2rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid rgba($light, 0.1);
+
+  h1 {
+    color: $primary;
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+    font-weight: 700;
+  }
+
+  p {
+    color: $gray;
+    font-size: 1.1rem;
+    margin: 0;
+  }
+  .clear-btn {
+    background: transparent;
+    color: $primary;
+    border: 2px solid $primary;
+    padding: 0.75rem 1.5rem;
+    border-radius: $border-radius;
+    cursor: pointer;
+    transition: all $transition-normal;
+    font-weight: 600;
+    white-space: nowrap;
+
+    &:hover {
+      background: $primary;
+      color: $light;
+      transform: translateY(-2px);
+    }
+  }
+}
+
+.wishlist-grid {
+  display: grid;
+  // the grid-template-columns is magic
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 2rem;
+}
+
+.empty-wishlist {
+  @include flex-center;
+  max-width: $desktop;
+  background: $dark;
+  margin-top: 1rem;
+  padding: 1rem 2rem;
+
+  button {
+    background: linear-gradient(45deg, $primary, lighten($primary, 10%));
+    color: $light;
+    border: none;
+    padding: 1rem 2rem;
+    border-radius: $border-radius;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all $transition-normal;
+    &:hover {
+      transform: translateY(-2px);
+    }
+  }
+}

@@ -1,0 +1,39 @@
+$primary: #e50914;
+$dark: #0f0f0f;
+$darker: #1a1a1a;
+$light: #ffffff;
+$gray: #888888;
+$muted: #666666;
+
+$action-primary: #ff6b35;
+$action-secondary: #ff8c42;
+$comedy-primary: #4ecdc4;
+$comedy-secondary: #44a08d;
+$drama-primary: #f7931e;
+$drama-secondary: #ffa726;
+
+$font-primary: 'Inter', 'Arial', sans-serif;
+$font-action: 'Impact', sans-serif;
+$font-comedy: 'Comic Sans MS', cursive;
+$font-drama: 'Times New Roman', serif;
+
+$border-radius: 8px;
+$border-radius-large: 12px;
+$header-height: 80px;
+
+$mobile: 768px;
+$tablet: 1024px;
+$desktop: 1200px;
+
+$transition-fast: 0.2s ease;
+$transition-normal: 0.3s ease;
+$transition-slow: 0.5s ease;
+
+$shadow-light: 0 2px 4px rgba(0, 0, 0, 0.1);
+$shadow-medium: 0 4px 8px rgba(0, 0, 0, 0.2);
+$shadow-heavy: 0 8px 16px rgba(0, 0, 0, 0.3);
+$shadow-card: 0 10px 25px rgba(0, 0, 0, 0.7);
+
+$z-header: 1000;
+$z-modal: 2000;
+$z-tooltip: 3000;

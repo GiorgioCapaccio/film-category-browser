@@ -1,0 +1,99 @@
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin flex-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+@mixin flex-start {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+@mixin hover-scale($scale: 1.05) {
+  transition: transform $transition-normal;
+  
+  &:hover {
+    transform: scale($scale);
+  }
+}
+
+@mixin hover-lift {
+  transition: transform $transition-normal, box-shadow $transition-normal;
+  
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: $shadow-heavy;
+  }
+}
+
+@mixin category-button($primary-color, $secondary-color) {
+  background: linear-gradient(45deg, $primary-color, $secondary-color);
+  border: none;
+  color: $light;
+  padding: 1rem 2rem;
+  border-radius: $border-radius;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: all $transition-normal;
+  box-shadow: 0 4px 15px rgba($primary-color, 0.3);
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba($primary-color, 0.4);
+  }
+}
+
+@mixin category-title($color, $font) {
+  color: $color;
+  font-family: $font;
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+@mixin tablet {
+  @media (max-width: $tablet) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: $desktop) {
+    @content;
+  }
+}
+
+@mixin card-base {
+  background: $darker;
+  border-radius: $border-radius;
+  overflow: hidden;
+  transition: transform $transition-normal, box-shadow $transition-normal;
+  
+  &:hover {
+    transform: scale(1.05);
+    box-shadow: $shadow-card;
+  }
+}
+
+@mixin loading-spinner($size: 40px, $color: $primary) {
+  width: $size;
+  height: $size;
+  border: 3px solid rgba($light, 0.1);
+  border-top: 3px solid $color;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}

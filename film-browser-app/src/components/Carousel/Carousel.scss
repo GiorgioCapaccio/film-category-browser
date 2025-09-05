@@ -1,0 +1,71 @@
+@import "../../styles/globals/variables";
+@import "../../styles/globals/mixins";
+
+.carousel {
+  margin-bottom: 3rem;
+
+  &-title {
+    @include category-title($primary, $font-primary);
+
+    &.action {
+      @include category-title($action-primary, $font-action);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    &.comedy {
+      @include category-title($comedy-primary, $font-comedy);
+    }
+
+    &.drama {
+      @include category-title($drama-primary, $font-drama);
+      font-style: italic;
+    }
+  }
+
+  &-container {
+    display: flex;
+    gap: 1rem;
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding: 1rem 0;
+    scroll-behavior: smooth;
+    scrollbar-width: thin;
+    scrollbar-color: $primary transparent;
+
+    &::-webkit-scrollbar {
+      height: 8px;
+    }
+
+    &::-webkit-scrollbar-track {
+      background: rgba($gray, 0.2);
+      border-radius: 4px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background: $primary;
+      border-radius: 4px;
+
+      &:hover {
+        background: lighten($primary, 10%);
+      }
+    }
+
+   
+  }
+
+  &-loading {
+    @include flex-center;
+    min-height: 300px;
+    color: $gray;
+    font-size: 1.1rem;
+    flex-direction: column;
+    gap: 1rem;
+
+    &::before {
+      content: "";
+      @include loading-spinner(40px, $primary);
+    }
+  }
+
+}
