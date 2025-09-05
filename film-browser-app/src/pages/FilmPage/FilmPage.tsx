@@ -81,11 +81,6 @@ const FilmPage: React.FC = () => {
         <div className="film-left">
           <div className="film-poster">
             <img src={currentFilm.image} alt={currentFilm.title} />
-            {/* {currentFilm.rating && (
-              <div className="film-rating">
-                ⭐ {currentFilm.rating.toFixed(1)}
-              </div>
-            )} */}
           </div>
         </div>
 
@@ -98,6 +93,14 @@ const FilmPage: React.FC = () => {
               <strong>Category:</strong>
               <span className={`category-badge ${currentFilm.category}`}>
                 {currentFilm.category.toUpperCase()}
+              </span>
+            </div>
+            <div className="meta-item">
+              <strong>Rating:</strong>
+              <span className={`category-badge ${currentFilm.rating}`}>
+                { currentFilm.rating && <div className="film-rating">
+                ⭐ {currentFilm.rating.toFixed(1)}
+                </div>}
               </span>
             </div>
             {currentFilm.runtime && (

@@ -37,6 +37,9 @@
     transition: all $transition-normal;
     font-weight: 600;
     white-space: nowrap;
+    font-size: 1rem;
+    text-transform: uppercase;
+    margin-top: 1rem;
 
     &:hover {
       background: $primary;
