@@ -2,7 +2,6 @@ import React from "react";
 import { useWishlistStore } from "../../store/wishlistStore";
 import "./FilmCard.scss";
 import type { Film } from "../../types";
-import { useToast } from "../../hooks/useToast";
 
 interface FilmCardProps {
   film: Film;
@@ -11,7 +10,6 @@ interface FilmCardProps {
 
 const FilmCard: React.FC<FilmCardProps> = ({ film, onClick }) => {
   const { addToWishlist, removeFromWishlist, isInWishlist } = useWishlistStore();
-  const { showToast } = useToast();
   const inWishlist = isInWishlist(film.id);
 
   const handleWishlistClick = (e: React.MouseEvent) => {

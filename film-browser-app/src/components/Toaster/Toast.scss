@@ -1,0 +1,12 @@
+.toast {
+  border-radius: 4px;
+  background-color: $dark;
+  color: $light;
+
+  &.toast-success {
+    background-color: $success;
+  }
+  &.toast-error {
+    background-color: $error;
+  }
+}
