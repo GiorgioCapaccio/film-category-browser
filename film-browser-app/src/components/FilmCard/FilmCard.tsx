@@ -18,10 +18,8 @@ const FilmCard: React.FC<FilmCardProps> = ({ film, onClick }) => {
     e.stopPropagation();
     if (inWishlist) {
       removeFromWishlist(film.id);
-      showToast(`${film.title} removed to wishlist`, 'success')
     } else {
       addToWishlist(film);
-      showToast(`${film.title} added to wishlist`, 'success')
     }
   };
 
